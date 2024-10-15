@@ -1,4 +1,4 @@
-package ImageUtils;
+package ImageUtilities;
 
 import java.util.Objects;
 

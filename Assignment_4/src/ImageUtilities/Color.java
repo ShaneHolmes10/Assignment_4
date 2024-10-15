@@ -1,4 +1,4 @@
-package ImageUtils;
+package ImageUtilities;
 
 /**
  * This interface serves to define the interface for dealing

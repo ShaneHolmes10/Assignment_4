@@ -1,4 +1,4 @@
-package ImageUtils;
+package ImageUtilities;
 
 /**
  * This defines the standard interface we want for images.

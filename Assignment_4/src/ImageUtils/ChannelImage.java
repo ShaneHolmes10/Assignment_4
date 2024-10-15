@@ -18,6 +18,26 @@ public class ChannelImage implements Image {
   private int height;
 
   /**
+   * This method provides a check to evaluate if the input pixel position
+   * is out of bounds.
+   *
+   * @param x x position of the pixel
+   * @param y y position of the pixel
+   * @throws IllegalArgumentException throw if any of the values are illegal
+   */
+  private void illegalPositionChecker(int x, int y) throws IllegalArgumentException {
+
+    if (x < 0 || x > width-1) {
+      throw new IllegalArgumentException("x is out of bounds");
+    }
+
+    if (y < 0 || y > height-1) {
+      throw new IllegalArgumentException("y is out of bounds");
+    }
+
+  }
+
+  /**
    * This instantiates this image instance to a
    * certain width and height.
    *
@@ -79,14 +99,12 @@ public class ChannelImage implements Image {
    * @return rbg color value
    */
   @Override
-  public int[] getPixelColor(int x, int y) {
-    int[] returnColor = new int[3];
+  public Color getPixelColor(int x, int y) throws IllegalArgumentException {
 
-    returnColor[0] = pixelData[0][x][y];
-    returnColor[1] = pixelData[1][x][y];
-    returnColor[2] = pixelData[2][x][y];
+    // Check legality of the pixel coordinate
+    illegalPositionChecker(x, y);
 
-    return returnColor;
+    return new SimpleColor(pixelData[0][x][y], pixelData[1][x][y], pixelData[2][x][y]);
   }
 
   /**
@@ -94,16 +112,17 @@ public class ChannelImage implements Image {
    *
    * @param x x position of pixel
    * @param y y position of pixel
-   * @param r red value of pixel
-   * @param g green value of pixel
-   * @param b blue value of pixel
+   * @param color color of the pixel
    */
   @Override
-  public void setPixelColor(int x, int y, int r, int g, int b) {
+  public void setPixelColor(int x, int y, Color color) throws IllegalArgumentException {
 
-    pixelData[0][x][y] = r;
-    pixelData[1][x][y] = g;
-    pixelData[2][x][y] = b;
+    // Check legality of the pixel coordinate
+    illegalPositionChecker(x, y);
+
+    pixelData[0][x][y] = color.getRed();
+    pixelData[1][x][y] = color.getGreen();
+    pixelData[2][x][y] = color.getBlue();
 
   }
 
@@ -156,7 +175,7 @@ public class ChannelImage implements Image {
     for (int row = 0; row < this.height; row++) {
       for (int col = 0; col < this.width; col++) {
 
-        if (this.getPixelColor(row, col) != castImage.getPixelColor(row, col)) {
+        if ( ! this.getPixelColor(row, col).equals(castImage.getPixelColor(row, col))) {
           return false;
         }
 

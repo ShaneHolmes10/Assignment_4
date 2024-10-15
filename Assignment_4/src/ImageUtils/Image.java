@@ -22,22 +22,26 @@ public interface Image {
 
   /**
    * This produces the color of a given pixel in the image.
+   * If we try to get a color out of bounds then we will
+   * need to throw an illegal error exception.
    *
    * @param x x position of pixel
    * @param y y position of pixel
    * @return rbg color value
+   * @throws IllegalArgumentException if illegal inputs are given
    */
-  int[] getPixelColor(int x, int y);
+  Color getPixelColor(int x, int y) throws IllegalArgumentException;
 
   /**
    * This changes the color value of a given pixel.
+   * If we try to get a color out of bounds then we will
+   * need to throw an illegal error exception.
    *
    * @param x x position of pixel
    * @param y y position of pixel
-   * @param r red value of pixel
-   * @param g green value of pixel
-   * @param b blue value of pixel
+   * @param color color of pixel
+   * @throws IllegalArgumentException if illegal inputs are given
    */
-  void setPixelColor(int x, int y, int r, int g, int b);
+  void setPixelColor(int x, int y, Color color) throws IllegalArgumentException;
 
 }

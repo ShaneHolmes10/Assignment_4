@@ -104,7 +104,7 @@ public class ChannelImage implements Image {
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
-    return new SimpleColor(pixelData[0][x][y], pixelData[1][x][y], pixelData[2][x][y]);
+    return new SimpleColor(pixelData[0][y][x], pixelData[1][y][x], pixelData[2][y][x]);
   }
 
   /**
@@ -120,9 +120,9 @@ public class ChannelImage implements Image {
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
-    pixelData[0][x][y] = color.getRed();
-    pixelData[1][x][y] = color.getGreen();
-    pixelData[2][x][y] = color.getBlue();
+    pixelData[0][y][x] = color.getRed();
+    pixelData[1][y][x] = color.getGreen();
+    pixelData[2][y][x] = color.getBlue();
 
   }
 
@@ -138,7 +138,7 @@ public class ChannelImage implements Image {
 
     returnString.append("Image: ");
     returnString.append(width);
-    returnString.append(" x ");
+    returnString.append("x");
     returnString.append(height);
 
     return returnString.toString();
@@ -170,12 +170,13 @@ public class ChannelImage implements Image {
       return false;
     }
 
-    // Check each pixel in the image to determine if they're equal, bacause the
+    // Check each pixel in the image to determine if they're equal, because the
     // last test passed we know they must be the same dimension
     for (int row = 0; row < this.height; row++) {
+
       for (int col = 0; col < this.width; col++) {
 
-        if ( ! this.getPixelColor(row, col).equals(castImage.getPixelColor(row, col))) {
+        if ( ! this.getPixelColor(col, row).equals(castImage.getPixelColor(col, row))) {
           return false;
         }
 

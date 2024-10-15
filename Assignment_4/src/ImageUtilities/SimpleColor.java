@@ -181,9 +181,9 @@ public class SimpleColor implements Color {
     returnString.append("(");
     returnString.append(this.colorValues[0]);
     returnString.append(", ");
-    returnString.append(this.colorValues[0]);
+    returnString.append(this.colorValues[1]);
     returnString.append(", ");
-    returnString.append(this.colorValues[0]);
+    returnString.append(this.colorValues[2]);
     returnString.append(")");
 
     return returnString.toString();
@@ -216,7 +216,7 @@ public class SimpleColor implements Color {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(colorValues);
+    return Objects.hash(colorValues[0], colorValues[1], colorValues[2]);
   }
 
 

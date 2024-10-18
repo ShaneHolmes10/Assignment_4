@@ -1,4 +1,4 @@
-package ImageUtilities;
+package Model;
 
 import java.util.Objects;
 

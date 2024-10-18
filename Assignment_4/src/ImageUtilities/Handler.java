@@ -1,5 +1,6 @@
 package ImageUtilities;
 
+import Model.Image;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
@@ -18,8 +19,7 @@ public interface Handler {
    * @return image data in a data object
    */
   static Image loadImage(String path) {
-    
-
+    return null;
   }
 
   /**

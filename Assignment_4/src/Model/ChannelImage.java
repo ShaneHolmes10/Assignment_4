@@ -1,4 +1,4 @@
-package ImageUtilities;
+package Model;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -104,7 +104,7 @@ public class ChannelImage implements Image {
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
-    return new SimpleColor(pixelData[0][y][x], pixelData[1][y][x], pixelData[2][y][x]);
+    return new SimpleColor(pixelData[y][x][0], pixelData[y][x][1], pixelData[y][x][2]);
   }
 
   /**
@@ -120,9 +120,9 @@ public class ChannelImage implements Image {
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
-    pixelData[0][y][x] = color.getRed();
-    pixelData[1][y][x] = color.getGreen();
-    pixelData[2][y][x] = color.getBlue();
+    pixelData[y][x][0] = color.getRed();
+    pixelData[y][x][1] = color.getGreen();
+    pixelData[y][x][2] = color.getBlue();
 
   }
 

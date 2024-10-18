@@ -1,10 +1,20 @@
-package ImageUtilities;
+package Model;
+
+import java.io.IOException;
 
 /**
  * This defines the standard interface we want for images.
  *
  */
 public interface Image {
+
+  /**
+   * Gets the pixelData from a Path.
+   * @param path Path to an Image.
+   * @return 3D array that represents the RGB values for the Image.
+   * @throws IOException Throws Exception if the Filepath isn't valid.
+   */
+  int[][][] getPixelData(String path) throws IOException;
 
   /**
    * This produces the width of the image.
@@ -43,5 +53,4 @@ public interface Image {
    * @throws IllegalArgumentException if illegal inputs are given
    */
   void setPixelColor(int x, int y, Color color) throws IllegalArgumentException;
-
 }

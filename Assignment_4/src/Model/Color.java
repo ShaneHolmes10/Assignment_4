@@ -1,4 +1,4 @@
-package ImageUtilities;
+package Model;
 
 /**
  * This interface serves to define the interface for dealing

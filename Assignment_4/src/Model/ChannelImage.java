@@ -11,7 +11,7 @@ import java.util.Objects;
  * tools and should make certain operations easier to perform.
  *
  */
-public class ChannelImage implements Image {
+public class ChannelImage { //extends AbstractImage {
 
   private int[][][] pixelData;
   private int width;
@@ -76,7 +76,7 @@ public class ChannelImage implements Image {
    *
    * @return width
    */
-  @Override
+  // @Override
   public int getWidth() {
     return this.width;
   }
@@ -86,7 +86,7 @@ public class ChannelImage implements Image {
    *
    * @return height
    */
-  @Override
+  // @Override
   public int getHeight() {
     return this.height;
   }
@@ -98,7 +98,7 @@ public class ChannelImage implements Image {
    * @param y y position of pixel
    * @return rbg color value
    */
-  @Override
+  // @Override
   public Color getPixelColor(int x, int y) throws IllegalArgumentException {
 
     // Check legality of the pixel coordinate
@@ -114,7 +114,7 @@ public class ChannelImage implements Image {
    * @param y y position of pixel
    * @param color color of the pixel
    */
-  @Override
+  // @Override
   public void setPixelColor(int x, int y, Color color) throws IllegalArgumentException {
 
     // Check legality of the pixel coordinate

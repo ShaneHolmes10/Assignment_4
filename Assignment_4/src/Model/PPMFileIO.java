@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class PPMImage extends AbstractImage {
+public class PPMImage extends AbstractFileIO {
 
   @Override
   protected void loadImage(String path) throws IOException {

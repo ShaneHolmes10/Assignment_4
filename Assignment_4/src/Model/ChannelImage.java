@@ -11,7 +11,7 @@ import java.util.Objects;
  * tools and should make certain operations easier to perform.
  *
  */
-public class ChannelImage { //extends AbstractImage {
+public class ChannelImage extends AbstractImage {
 
   private int[][][] pixelData;
   private int width;
@@ -41,35 +41,21 @@ public class ChannelImage { //extends AbstractImage {
    * This instantiates this image instance to a
    * certain width and height.
    *
-   * @param width width of image
-   * @param height height of image
+   * @param pixelData color information
    */
-  public ChannelImage(int width, int height) {
-    pixelData = new int[3][height][width];
-    this.width = width;
-    this.height = height;
+  public ChannelImage(int[][][] pixelData) {
+    super(pixelData);
 
-  }
+    if (pixelData.length != 3) {
+      throw new IllegalArgumentException("Must have 3 channels");
+    }
 
-  /**
-   * This will give other classes in this package the ability to
-   * set all the pixel data for this class.
-   *
-   * @param pixelData input pixel data
-   */
-  protected void setImage(int[][][] pixelData) {
     this.pixelData = pixelData;
+
+    this.width = pixelData[0][0].length;
+    this.height = pixelData[0].length;
   }
 
-  /**
-   * This will give other classes in this package the ability to
-   * get all the pixel data for this class.
-   *
-   * @return pixel data
-   */
-  protected int[][][] getImage() {
-    return pixelData;
-  }
 
   /**
    * This produces the width of the image.
@@ -91,6 +77,23 @@ public class ChannelImage { //extends AbstractImage {
     return this.height;
   }
 
+
+  @Override
+  public int getRed(int x, int y) {
+    return pixelData[0][y][x];
+  }
+
+  @Override
+  public int getGreen(int x, int y) {
+    return pixelData[1][y][x];
+  }
+
+  @Override
+  public int getBlue(int x, int y) {
+    return pixelData[2][y][x];
+  }
+
+
   /**
    * This produces the color of a given pixel in the image.
    *
@@ -104,27 +107,9 @@ public class ChannelImage { //extends AbstractImage {
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
-    return new SimpleColor(pixelData[y][x][0], pixelData[y][x][1], pixelData[y][x][2]);
+    return new SimpleColor(pixelData[0][y][x], pixelData[1][y][x], pixelData[2][y][x]);
   }
 
-  /**
-   * This changes the color value of a given pixel.
-   *
-   * @param x x position of pixel
-   * @param y y position of pixel
-   * @param color color of the pixel
-   */
-  // @Override
-  public void setPixelColor(int x, int y, Color color) throws IllegalArgumentException {
-
-    // Check legality of the pixel coordinate
-    illegalPositionChecker(x, y);
-
-    pixelData[y][x][0] = color.getRed();
-    pixelData[y][x][1] = color.getGreen();
-    pixelData[y][x][2] = color.getBlue();
-
-  }
 
   /**
    *  This is a string representation of this class,

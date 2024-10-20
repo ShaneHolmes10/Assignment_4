@@ -2,7 +2,7 @@ package Model;
 
 import java.io.IOException;
 
-public abstract class FileIO {
+public abstract class AbstractFileIO {
 
   protected abstract Image loadImage(String path) throws IOException;
 

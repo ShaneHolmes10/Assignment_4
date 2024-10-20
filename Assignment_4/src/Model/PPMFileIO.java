@@ -7,10 +7,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class PPMImage extends AbstractFileIO {
+public class PPMFileIO extends AbstractFileIO {
 
   @Override
-  protected void loadImage(String path) throws IOException {
+  protected Image loadImage(String path) throws IOException {
+
+    Image returnImage;
+
     try (InputStream inputStream = Files.newInputStream(Paths.get(path))) {
       String token;
       // TODO: Make this nicer and neater.
@@ -26,7 +29,7 @@ public class PPMImage extends AbstractFileIO {
       int maxValue = imageLines.nextInt();
       System.out.println("Maximum value of a color in this file (usually 255): "+maxValue);
 
-      pixelData = new int[height][width][3];
+      int[][][] pixelData = new int[3][height][width];
 
       for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
@@ -34,15 +37,21 @@ public class PPMImage extends AbstractFileIO {
           int g = imageLines.nextInt();
           int b = imageLines.nextInt();
 
-          pixelData[y][x][0] = r;
-          pixelData[y][x][1] = g;
-          pixelData[y][x][2] = b;
+          pixelData[0][y][x] = r;
+          pixelData[1][y][x] = g;
+          pixelData[2][y][x] = b;
         }
       }
+
+      returnImage = new ChannelImage(pixelData);
+
 
     } catch (Exception e) {
       throw new FileNotFoundException("File Path not Valid: " + path);
     }
+
+    return returnImage;
+
   }
 
   private Scanner readImage(InputStream inputStream) throws IOException {
@@ -58,4 +67,12 @@ public class PPMImage extends AbstractFileIO {
 
     return new Scanner(builder.toString());
   }
+
+
+  @Override
+  protected void saveImage(String path) throws IOException {
+
+  }
+
+
 }

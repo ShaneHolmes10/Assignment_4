@@ -19,9 +19,34 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testConstructor1() {
-    Image i1 = new ChannelImage(600, 400);
 
-    assertEquals("Image: 600x400", i1.toString());
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    assertEquals("Image: 5x5", i1.toString());
 
   }
 
@@ -35,9 +60,34 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testGetWidth1() {
-    Image i1 = new ChannelImage(600, 400);
 
-    assertEquals(600, i1.getWidth());
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    assertEquals(5, i1.getWidth());
   }
 
 
@@ -50,9 +100,34 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testGetHeight1() {
-    Image i1 = new ChannelImage(600, 400);
 
-    assertEquals(400, i1.getHeight());
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    assertEquals(5, i1.getHeight());
   }
 
 
@@ -65,11 +140,36 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testGetPixelColor1() {
-    Image i1 = new ChannelImage(600, 400);
 
-    Color compare = new SimpleColor(0,0,0);
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
 
-    assertEquals(compare, i1.getPixelColor(0, 0));
+    Image i1 = new ChannelImage(input);
+
+    InterfaceColor compare = new SimpleColor(0,0,0);
+
+    assertEquals(compare, i1.getPixelColor(3, 3));
   }
 
   /**
@@ -78,9 +178,34 @@ public class ChannelImageUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testGetPixelColor2() {
-    Image i1 = new ChannelImage(600, 400);
 
-    Color compare = new SimpleColor(0,0,0);
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    InterfaceColor compare = new SimpleColor(0,0,0);
 
     assertEquals(compare, i1.getPixelColor(-1, -1));
   }
@@ -91,11 +216,36 @@ public class ChannelImageUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testGetPixelColor3() {
-    Image i1 = new ChannelImage(600, 400);
 
-    Color compare = new SimpleColor(0,0,0);
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
 
-    assertEquals(compare, i1.getPixelColor(700, 200));
+    Image i1 = new ChannelImage(input);
+
+    InterfaceColor compare = new SimpleColor(0,0,0);
+
+    assertEquals(compare, i1.getPixelColor(3, 7));
   }
 
   /**
@@ -105,65 +255,38 @@ public class ChannelImageUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testGetPixelColor4() {
-    Image i1 = new ChannelImage(600, 400);
 
-    Color compare = new SimpleColor(0,0,0);
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    InterfaceColor compare = new SimpleColor(0,0,0);
 
     assertEquals(compare, i1.getPixelColor(600, 400));
   }
 
-
-
-
-
-
-
-
-
-  /**
-   * Test that we can set the value of an individual pixel.
-   *
-   */
-  @Test
-  public void testSetPixelColor1() {
-    Image i1 = new ChannelImage(600, 400);
-
-    i1.setPixelColor(0, 0, new SimpleColor(255, 255, 255));
-
-    Color compare = new SimpleColor(255,255,255);
-
-    assertEquals(compare, i1.getPixelColor(0, 0));
-  }
-
-  /**
-   * Test that we can set the value of an individual pixel,
-   * but try to set a negative position.
-   *
-   */
-  @Test(expected = IllegalArgumentException.class)
-  public void testSetPixelColor2() {
-    Image i1 = new ChannelImage(600, 400);
-
-    i1.setPixelColor(-1, -1, new SimpleColor(255, 255, 255));
-
-    Color compare = new SimpleColor(255,255,255);
-
-  }
-
-  /**
-   * Test that we can set the value of an individual pixel,
-   * but with and out-of-bounds position.
-   *
-   */
-  @Test(expected = IllegalArgumentException.class)
-  public void testSetPixelColor3() {
-    Image i1 = new ChannelImage(600, 400);
-
-    i1.setPixelColor(700, 200, new SimpleColor(255, 255, 255));
-
-    Color compare = new SimpleColor(255,255,255);
-
-  }
 
 
   /**
@@ -172,9 +295,34 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testToString1() {
-    Image i1 = new ChannelImage(600, 400);
 
-    assertEquals("Image: 600x400", i1.toString());
+    int[][][] input = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input);
+
+    assertEquals("Image: 5x5", i1.toString());
 
   }
 
@@ -186,8 +334,57 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testEquals1() {
-    Image i1 = new ChannelImage(1, 40);
-    Image i2 = new ChannelImage(1, 40);
+
+    int[][][] input1 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    int[][][] input2 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input1);
+    Image i2 = new ChannelImage(input2);
 
     boolean var = i1.equals(i2);
 
@@ -203,50 +400,124 @@ public class ChannelImageUnitTest {
    */
   @Test
   public void testEquals2() {
-    Image i1 = new ChannelImage(600, 400);
-    Image i2 = new ChannelImage(700, 400);
+
+    int[][][] input1 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    int[][][] input2 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+            }
+    };
+
+    Image i1 = new ChannelImage(input1);
+    Image i2 = new ChannelImage(input2);
 
     assertFalse(i1.equals(i2));
 
   }
 
+
+
   /**
    * This tests if two images are equal to one another,
-   * where the two images are not the same because of
-   * one color being off.
+   * where the two images are not the same, because the
+   * pixel color is different.
    *
    */
   @Test
   public void testEquals3() {
-    Image i1 = new ChannelImage(600, 400);
-    Image i2 = new ChannelImage(600, 400);
 
-    i1.setPixelColor(0, 0, new SimpleColor(45, 78, 255));
+    int[][][] input1 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    int[][][] input2 = {
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            },
+            {
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0},
+                    {0, 1, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
+            }
+    };
+
+    Image i1 = new ChannelImage(input1);
+    Image i2 = new ChannelImage(input2);
 
     assertFalse(i1.equals(i2));
 
   }
-
-  /**
-   * This tests if two images are equal to one another,
-   * where the two images are not the same, with two
-   * colors.
-   *
-   */
-  @Test
-  public void testEquals4() {
-    Image i1 = new ChannelImage(600, 400);
-    Image i2 = new ChannelImage(600, 400);
-
-    i1.setPixelColor(0, 0, new SimpleColor(45, 78, 255));
-    i2.setPixelColor(0, 0, new SimpleColor(45, 78, 255));
-
-    assertTrue(i1.equals(i2));
-
-  }
-
-
-
 
 
 

@@ -16,7 +16,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testConstructor1() {
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     assertEquals("(0, 0, 0)", c1.toString());
 
@@ -28,7 +28,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor2() {
-    Color c1 = new SimpleColor(-1, 0, 0);
+    InterfaceColor c1 = new SimpleColor(-1, 0, 0);
 
   }
 
@@ -38,7 +38,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor3() {
-    Color c1 = new SimpleColor(256, 0, 0);
+    InterfaceColor c1 = new SimpleColor(256, 0, 0);
 
   }
 
@@ -48,7 +48,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor4() {
-    Color c1 = new SimpleColor(0, -1, 0);
+    InterfaceColor c1 = new SimpleColor(0, -1, 0);
 
   }
 
@@ -58,7 +58,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor5() {
-    Color c1 = new SimpleColor(0, 256, 0);
+    InterfaceColor c1 = new SimpleColor(0, 256, 0);
 
   }
 
@@ -68,7 +68,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor6() {
-    Color c1 = new SimpleColor(0, 0, -1);
+    InterfaceColor c1 = new SimpleColor(0, 0, -1);
 
   }
 
@@ -78,7 +78,7 @@ public class SimpleColorUnitTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor7() {
-    Color c1 = new SimpleColor(0, 0, 256);
+    InterfaceColor c1 = new SimpleColor(0, 0, 256);
 
   }
 
@@ -88,7 +88,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testConstructor8() {
-    Color c1 = new SimpleColor(255, 255, 255);
+    InterfaceColor c1 = new SimpleColor(255, 255, 255);
 
     assertEquals("(255, 255, 255)", c1.toString());
 
@@ -107,7 +107,7 @@ public class SimpleColorUnitTest {
   @Test
   public void testSetValueO11() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(4, 5, 6);
 
@@ -124,7 +124,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO12() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(-4, 5, 6);
 
@@ -137,7 +137,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO13() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(267, 5, 6);
 
@@ -150,7 +150,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO14() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(4, -5, 6);
 
@@ -163,7 +163,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO15() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(4, 265, 6);
 
@@ -176,7 +176,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO16() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(4, 5, -6);
 
@@ -189,7 +189,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO17() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setValues(4, 5, 266);
 
@@ -209,7 +209,7 @@ public class SimpleColorUnitTest {
   @Test
   public void testSetValueO21() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -230,7 +230,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO22() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -249,7 +249,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO23() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -268,7 +268,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO24() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -287,7 +287,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO25() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -306,7 +306,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO26() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -325,7 +325,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO27() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[3];
 
@@ -344,7 +344,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO28() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[2];
 
@@ -362,7 +362,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetValueO29() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     int[] v = new int[4];
 
@@ -388,7 +388,7 @@ public class SimpleColorUnitTest {
   @Test
   public void testSetRed1() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setRed(43);
 
@@ -403,7 +403,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetRed2() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setRed(-43);
 
@@ -416,7 +416,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetRed3() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setRed(267);
 
@@ -433,7 +433,7 @@ public class SimpleColorUnitTest {
   @Test
   public void testSetGreen1() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setGreen(43);
 
@@ -448,7 +448,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetGreen2() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setGreen(-43);
 
@@ -461,7 +461,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetGreen3() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setGreen(267);
 
@@ -479,7 +479,7 @@ public class SimpleColorUnitTest {
   @Test
   public void testSetBlue1() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setBlue(43);
 
@@ -494,7 +494,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetBlue2() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setBlue(-43);
 
@@ -507,7 +507,7 @@ public class SimpleColorUnitTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetBlue3() {
 
-    Color c1 = new SimpleColor(0, 0, 0);
+    InterfaceColor c1 = new SimpleColor(0, 0, 0);
 
     c1.setBlue(267);
 
@@ -520,7 +520,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testGetValues1() {
-    Color c1 = new SimpleColor(4, 5, 6);
+    InterfaceColor c1 = new SimpleColor(4, 5, 6);
 
     int[] compare = new int[3];
 
@@ -546,7 +546,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testGetRed1() {
-    Color c1 = new SimpleColor(4, 5, 6);
+    InterfaceColor c1 = new SimpleColor(4, 5, 6);
 
     assertEquals(4, c1.getRed());
 
@@ -567,7 +567,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testGetGreen1() {
-    Color c1 = new SimpleColor(4, 5, 6);
+    InterfaceColor c1 = new SimpleColor(4, 5, 6);
 
     assertEquals(5, c1.getGreen());
   }
@@ -583,7 +583,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testGetBlue1() {
-    Color c1 = new SimpleColor(4, 5, 6);
+    InterfaceColor c1 = new SimpleColor(4, 5, 6);
 
     assertEquals(6, c1.getBlue());
   }
@@ -599,7 +599,7 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testToString1() {
-    Color c1 = new SimpleColor(43, 54, 66);
+    InterfaceColor c1 = new SimpleColor(43, 54, 66);
 
     assertEquals("(43, 54, 66)", c1.toString());
   }
@@ -616,8 +616,8 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testEquals1() {
-    Color c1 = new SimpleColor(43, 54, 66);
-    Color c2 = new SimpleColor(43, 54, 66);
+    InterfaceColor c1 = new SimpleColor(43, 54, 66);
+    InterfaceColor c2 = new SimpleColor(43, 54, 66);
 
     assertTrue(c1.equals(c2));
 
@@ -629,8 +629,8 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testEquals2() {
-    Color c1 = new SimpleColor(43, 54, 66);
-    Color c2 = new SimpleColor(42, 54, 66);
+    InterfaceColor c1 = new SimpleColor(43, 54, 66);
+    InterfaceColor c2 = new SimpleColor(42, 54, 66);
 
     assertFalse(c1.equals(c2));
 
@@ -646,8 +646,8 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testHashCode1() {
-    Color c1 = new SimpleColor(43, 54, 66);
-    Color c2 = new SimpleColor(43, 54, 66);
+    InterfaceColor c1 = new SimpleColor(43, 54, 66);
+    InterfaceColor c2 = new SimpleColor(43, 54, 66);
 
     assertEquals(c1.hashCode(), c2.hashCode());
 
@@ -659,8 +659,8 @@ public class SimpleColorUnitTest {
    */
   @Test
   public void testHashCode2() {
-    Color c1 = new SimpleColor(43, 54, 66);
-    Color c2 = new SimpleColor(42, 54, 66);
+    InterfaceColor c1 = new SimpleColor(43, 54, 66);
+    InterfaceColor c2 = new SimpleColor(42, 54, 66);
 
     assertNotEquals(c1.hashCode(), c2.hashCode());
 

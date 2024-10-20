@@ -17,6 +17,11 @@ public class PPMFileIOTest {
 
   }
 
+  @Test
+  public void testSavePPM() {
+    Image im = ImageFactory.loadImage("C:\\Users\\Shane Holmes\\OneDrive\\Desktop\\Programming Design Paradigms\\Assignment 4\\Assignment_4\\Assignment_4\\files\\snail.ascii.ppm");
 
+    ImageFactory.saveImage(im, "C:\\Users\\Shane Holmes\\OneDrive\\Desktop\\Programming Design Paradigms\\Assignment 4\\Assignment_4\\Assignment_4\\files\\snailSAVED.ascii.ppm");
+  }
 
 }

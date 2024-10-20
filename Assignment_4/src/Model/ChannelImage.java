@@ -16,6 +16,7 @@ public class ChannelImage extends AbstractImage {
   private int[][][] pixelData;
   private int width;
   private int height;
+  private int maxValue = 255;
 
   /**
    * This method provides a check to evaluate if the input pixel position
@@ -76,6 +77,11 @@ public class ChannelImage extends AbstractImage {
     return this.height;
   }
 
+  public int getMaxValue() { return this.maxValue; }
+
+  public void setMaxValue(int maxValue) {
+    this.maxValue = maxValue;
+  }
 
   @Override
   public int getRed(int x, int y) {
@@ -188,6 +194,4 @@ public class ChannelImage extends AbstractImage {
   public int hashCode() {
     return Objects.hash(width, height, Arrays.deepHashCode(pixelData));
   }
-
-
 }

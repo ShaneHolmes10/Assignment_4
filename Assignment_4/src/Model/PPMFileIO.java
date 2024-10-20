@@ -3,6 +3,7 @@ package Model;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -11,7 +12,6 @@ public class PPMFileIO extends AbstractFileIO {
 
   @Override
   protected Image loadImage(String path) throws IOException {
-
     Image returnImage;
 
     try (InputStream inputStream = Files.newInputStream(Paths.get(path))) {
@@ -44,7 +44,7 @@ public class PPMFileIO extends AbstractFileIO {
       }
 
       returnImage = new ChannelImage(pixelData);
-
+      returnImage.setMaxValue(maxValue);
 
     } catch (Exception e) {
       throw new FileNotFoundException("File Path not Valid: " + path);
@@ -52,6 +52,34 @@ public class PPMFileIO extends AbstractFileIO {
 
     return returnImage;
 
+  }
+
+  @Override
+  protected void saveImage(Image im, String path) throws IOException {
+    try(OutputStream outputStream = Files.newOutputStream(Paths.get(path))) {
+      int[][][] pixels = im.getPixels();
+      String header = new StringBuilder("P3\n")
+          .append(im.getWidth())
+          .append(" ")
+          .append(im.getHeight())
+          .append("\n")
+          .append(im.getMaxValue())
+          .append("\n")
+          .toString();
+
+      outputStream.write(header.getBytes());
+
+      for (int y = 0; y < im.getHeight(); ++y) {
+        for (int x = 0; x < im.getWidth(); ++x) {
+          outputStream.write(pixels[0][y][x]);
+          outputStream.write(pixels[1][y][x]);
+          outputStream.write(pixels[2][y][x]);
+        }
+      }
+    } catch (Exception e) {
+      // TODO: Figure out what exception to throw.
+      throw new IOException("FIGURE OUT WHAT THIS IS.");
+    }
   }
 
   private Scanner readImage(InputStream inputStream) throws IOException {
@@ -67,12 +95,5 @@ public class PPMFileIO extends AbstractFileIO {
 
     return new Scanner(builder.toString());
   }
-
-
-  @Override
-  protected void saveImage(String path) throws IOException {
-
-  }
-
 
 }

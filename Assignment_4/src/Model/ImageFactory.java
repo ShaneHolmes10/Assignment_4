@@ -26,7 +26,6 @@ public class ImageFactory {
     }
   }
 
-
   private static String extensionExtractor(String path) throws IllegalArgumentException {
     // Find the last dot in the file name
     int dotIndex = path.lastIndexOf('.');
@@ -42,15 +41,24 @@ public class ImageFactory {
 
 
   public static Image loadImage(String path) throws IllegalArgumentException {
-
     String extension = extensionExtractor(path);
 
     try {
       return createImage(extension).loadImage(path);
     } catch(IOException e) {
-      throw new IllegalArgumentException("File not found");
+      throw new IllegalArgumentException("File not found at path: " + path);
     }
+  }
 
+  public static void saveImage(Image im, String path) throws IllegalArgumentException {
+    String extension = extensionExtractor(path);
+
+    try {
+      createImage(extension).saveImage(im, path);
+    } catch(IOException e) {
+      // TODO: Fix this error message.
+      throw new IllegalArgumentException("File not found at path: " + path);
+    }
   }
 
 

@@ -23,6 +23,20 @@ public interface Image {
   int getHeight();
 
   /**
+   * This produces the maxValue in the Image. Necessary for PPM Images.
+   *
+   * @return maximum pixel value.
+   */
+  int getMaxValue();
+
+  /**
+   * Sets the max value in the Image.k
+   *
+   * @param maxValue Max Pixel Value to set to.
+   */
+  void setMaxValue(int maxValue);
+
+  /**
    * This gives the red component of the pixel at the coordinate.
    *
    * @param x coordinate of pixel

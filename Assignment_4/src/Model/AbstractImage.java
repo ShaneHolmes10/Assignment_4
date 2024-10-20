@@ -1,36 +1,26 @@
 package Model;
 
-public class AbstractImage implements Image{
-
-  public AbstractImage(int[][][] pixelData) throws IllegalArgumentException {}
+public abstract class AbstractImage implements Image{
 
   @Override
-  public int getWidth() {
-    return 0;
-  }
+  public abstract int getWidth();
 
   @Override
-  public int getHeight() {
-    return 0;
-  }
+  public abstract int getHeight();
 
   @Override
-  public int getRed(int x, int y) {
-    return 0;
-  }
+  public abstract int getRed(int x, int y);
 
   @Override
-  public int getGreen(int x, int y) {
-    return 0;
-  }
+  public abstract int getGreen(int x, int y);
 
   @Override
-  public int getBlue(int x, int y) {
-    return 0;
-  }
+  public abstract int getBlue(int x, int y);
 
   @Override
-  public Color getPixelColor(int x, int y) throws IllegalArgumentException {
-    return null;
-  }
+  public abstract InterfaceColor getPixelColor(int x, int y) throws IllegalArgumentException;
+
+  @Override
+  public abstract int[][][] getPixels();
+
 }

@@ -5,7 +5,7 @@ package Model;
  * with color classes.
  *
  */
-public interface Color {
+public interface InterfaceColor {
 
   /**
    * Set the color values for this object. Color values
@@ -84,4 +84,5 @@ public interface Color {
   int getBlue();
 
 
+  InterfaceColor scale(double value);
 }

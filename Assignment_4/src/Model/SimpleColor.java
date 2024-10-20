@@ -2,7 +2,7 @@ package Model;
 
 import java.util.Objects;
 
-public class SimpleColor implements Color {
+public class SimpleColor implements InterfaceColor {
 
   /**
    * This method determines if the color value inputs are illegal.
@@ -168,6 +168,12 @@ public class SimpleColor implements Color {
     return colorValues[2];
   }
 
+
+  @Override
+  public InterfaceColor scale(double value) {
+    return new SimpleColor((int)(colorValues[0]*value), (int)(colorValues[1]*value), (int)(colorValues[2]*value));
+  }
+
   /**
    * This is a string representation of the color.
    * Int the form (R, G, B).
@@ -199,11 +205,11 @@ public class SimpleColor implements Color {
   @Override
   public boolean equals(Object o) {
 
-    if (! (o instanceof Color)) {
+    if (! (o instanceof InterfaceColor)) {
       return false;
     }
 
-    Color castObject = (Color) o;
+    InterfaceColor castObject = (InterfaceColor) o;
 
     return castObject.getRed() == this.getRed() && castObject.getGreen() == this.getGreen() && castObject.getBlue() == this.getBlue();
 

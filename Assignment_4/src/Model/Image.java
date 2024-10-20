@@ -1,7 +1,5 @@
 package Model;
 
-import java.io.IOException;
-
 /**
  * This defines the standard interface we want for images.
  * This interface is composed only of getters to leave the image
@@ -61,7 +59,9 @@ public interface Image {
    * @return rbg color value
    * @throws IllegalArgumentException if illegal inputs are given
    */
-  Color getPixelColor(int x, int y) throws IllegalArgumentException;
+  InterfaceColor getPixelColor(int x, int y) throws IllegalArgumentException;
+
+  int[][][] getPixels();
 
 
 }

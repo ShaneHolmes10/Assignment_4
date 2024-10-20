@@ -44,7 +44,6 @@ public class ChannelImage extends AbstractImage {
    * @param pixelData color information
    */
   public ChannelImage(int[][][] pixelData) {
-    super(pixelData);
 
     if (pixelData.length != 3) {
       throw new IllegalArgumentException("Must have 3 channels");
@@ -101,13 +100,21 @@ public class ChannelImage extends AbstractImage {
    * @param y y position of pixel
    * @return rbg color value
    */
-  // @Override
-  public Color getPixelColor(int x, int y) throws IllegalArgumentException {
+  @Override
+  public InterfaceColor getPixelColor(int x, int y) throws IllegalArgumentException {
 
     // Check legality of the pixel coordinate
     illegalPositionChecker(x, y);
 
     return new SimpleColor(pixelData[0][y][x], pixelData[1][y][x], pixelData[2][y][x]);
+  }
+
+
+
+
+  @Override
+  public int[][][] getPixels() {
+    return pixelData;
   }
 
 

@@ -9,6 +9,9 @@ public class ImageFactory {
 
   static {
     formatMap.put("ppm", PPMFileIO.class);
+    formatMap.put("png", PNGFileIO.class);
+    formatMap.put("jpg", JPGFileIO.class);
+    formatMap.put("jpeg", JPGFileIO.class);
     // Add other formats here (jpeg, bmp, etc.)
   }
 
